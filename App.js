@@ -1,10 +1,16 @@
 import { initializeApp } from "firebase/app";
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { SendbirdUIKitContainer } from '@sendbird/uikit-react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { SendbirdUIKitContainer } from "@sendbird/uikit-react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { SENDBIRD_APP_ID } from "./secrets";
 // internal
-import {FileService, NotificationService, ClipboardService, MediaService} from "./src/services"
+import {
+  FileService,
+  NotificationService,
+  ClipboardService,
+  MediaService,
+} from "./src/services";
 
 const fireBaseConfigDevelopment = {
   apiKey: "AIzaSyBoPxATRJMVmYLLYkQfmZSRIOSDeVkZxiM",
@@ -15,35 +21,33 @@ const fireBaseConfigDevelopment = {
   appId: "1:1041408332003:web:99f959702b1880af9f35d6",
   measurementId: "G-J9RNLX71TV",
 };
-export const firebaseApp = initializeApp(fireBaseConfigDevelopment)
+export const firebaseApp = initializeApp(fireBaseConfigDevelopment);
 
 export default function App() {
-
   return (
     <SendbirdUIKitContainer
-    appId={'APP_ID'}
-    chatOptions={{ localCacheStorage: AsyncStorage }}
-    platformServices={{
+      appId={SENDBIRD_APP_ID}
+      chatOptions={{ localCacheStorage: AsyncStorage }}
+      platformServices={{
         file: FileService,
         // notification: NotificationService(firebaseApp),
         clipboard: ClipboardService,
         media: MediaService,
-    }}
->
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      }}
+    >
+      <View style={styles.container}>
+        <Text>Open up App.js to start working on your app!</Text>
+        <StatusBar style="auto" />
+      </View>
     </SendbirdUIKitContainer>
-
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
