@@ -6,7 +6,7 @@ import {
 } from "@sendbird/uikit-react-native";
 import { useGroupChannel } from "@sendbird/uikit-chat-hooks";
 
-const GroupChannelFragment = createGroupChannelFragment();
+// const GroupChannelFragment = createGroupChannelFragment();
 
 export const GroupChannelScreen = () => {
   const navigation = useNavigation();

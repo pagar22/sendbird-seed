@@ -1,17 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { SendbirdUIKitContainer } from "@sendbird/uikit-react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { SENDBIRD_APP_ID } from "./secrets/secrets";
+import { SendbirdUIKitContainer } from "@sendbird/uikit-react-native";
 // internal
-import {
-  FileService,
-  NotificationService,
-  ClipboardService,
-  MediaService,
-} from "./src/services";
+import { SENDBIRD_APP_ID } from "./secrets/secrets";
+import { FileService, ClipboardService, MediaService } from "./src/services";
 import { Navigation } from "./src/navigation/app.navigator";
+import { getMessaging } from "firebase/messaging";
 
 const fireBaseConfigDevelopment = {
   apiKey: "AIzaSyBoPxATRJMVmYLLYkQfmZSRIOSDeVkZxiM",
@@ -31,12 +26,13 @@ export default function App() {
       chatOptions={{ localCacheStorage: AsyncStorage }}
       platformServices={{
         file: FileService,
-        // notification: NotificationService(firebaseApp),
+        notification: getMessaging(firebaseApp),
         clipboard: ClipboardService,
         media: MediaService,
       }}
     >
       <Navigation />
+      <StatusBar />
     </SendbirdUIKitContainer>
   );
 }

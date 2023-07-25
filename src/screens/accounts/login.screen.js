@@ -3,7 +3,7 @@ import React from "react";
 import { Pressable, Text, View } from "react-native";
 
 export const LoginScreen = ({ navigation }) => {
-  // const connect = useConnection();
+  const { connect } = useConnection();
   return (
     <View
       style={{
@@ -17,7 +17,7 @@ export const LoginScreen = ({ navigation }) => {
         style={{ padding: 20, backgroundColor: "#fbd5ea", borderRadius: 20 }}
         onPress={() => connect("USER_ID", { nickname: "Nickname" })}
       >
-        <Text style={{ fontSize: 20 }}>Login in! </Text>
+        <Text style={{ fontSize: 20 }}>Login in!</Text>
       </Pressable>
     </View>
   );
