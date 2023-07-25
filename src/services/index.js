@@ -16,22 +16,22 @@ import * as Permissions from "react-native-permissions";
 import * as CreateThumbnail from "expo-video-thumbnails";
 import * as ImageResizer from "@bam.tech/react-native-image-resizer";
 
-const ClipboardService = createNativeClipboardService(Clipboard);
-const NotificationService = (firebaseApp) => {
+export const ClipboardService = createNativeClipboardService(Clipboard);
+export const NotificationService = (firebaseApp) => {
   //     const messaging = getMessaging(firebaseApp)
   //     return createNativeNotificationService({
   //     messagingModule: messaging,
   //     permissionModule: Permissions,
   // });
 };
-const FileService = createNativeFileService({
+export const FileService = createNativeFileService({
   fsModule: FileAccess,
   permissionModule: Permissions,
   imagePickerModule: ImagePicker,
   // mediaLibraryModule: CameraRoll,
   documentPickerModule: DocumentPicker,
 });
-const MediaService = createNativeMediaService({
+export const MediaService = createNativeMediaService({
   VideoComponent: Video,
   thumbnailModule: CreateThumbnail,
   imageResizerModule: ImageResizer,

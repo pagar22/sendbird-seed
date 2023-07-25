@@ -11,6 +11,7 @@ import {
   ClipboardService,
   MediaService,
 } from "./src/services";
+import { Navigation } from "./src/navigation/app.navigator";
 
 const fireBaseConfigDevelopment = {
   apiKey: "AIzaSyBoPxATRJMVmYLLYkQfmZSRIOSDeVkZxiM",
@@ -35,10 +36,7 @@ export default function App() {
         media: MediaService,
       }}
     >
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
+      <Navigation />
     </SendbirdUIKitContainer>
   );
 }
