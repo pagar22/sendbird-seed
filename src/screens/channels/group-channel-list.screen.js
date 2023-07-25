@@ -7,5 +7,14 @@ const GroupChannelListFragment = createGroupChannelListFragment();
 export const GroupChannelListScreen = () => {
   const navigation = useNavigation();
 
-  return <GroupChannelListFragment />;
+  return (
+    <GroupChannelListFragment
+      onPressChannel={(channel) => {
+        navigation.navigate("GroupChannel", { channelUrl: channel.url });
+      }}
+      onPressCreateChannel={(channelType) => {
+        navigation.navigate("GroupChannelCreate", { channelType });
+      }}
+    />
+  );
 };

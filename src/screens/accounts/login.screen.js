@@ -1,7 +1,9 @@
+import { useConnection } from "@sendbird/uikit-react-native";
 import React from "react";
-import { Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
 export const LoginScreen = ({ navigation }) => {
+  // const connect = useConnection();
   return (
     <View
       style={{
@@ -11,7 +13,12 @@ export const LoginScreen = ({ navigation }) => {
         justifyContent: "center",
       }}
     >
-      <Text style={{ fontSize: 20 }}>Login in Here!</Text>
+      <Pressable
+        style={{ padding: 20, backgroundColor: "#fbd5ea", borderRadius: 20 }}
+        onPress={() => connect("USER_ID", { nickname: "Nickname" })}
+      >
+        <Text style={{ fontSize: 20 }}>Login in! </Text>
+      </Pressable>
     </View>
   );
 };
