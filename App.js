@@ -3,7 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { SendbirdUIKitContainer } from "@sendbird/uikit-react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { SENDBIRD_APP_ID } from "./secrets";
+import { SENDBIRD_APP_ID } from "./secrets/secrets";
 // internal
 import {
   FileService,

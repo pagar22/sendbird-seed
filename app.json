@@ -15,16 +15,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "googleServicesFile": "./secrets/GoogleService-Info.plist",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pagar22.sendbirdseed"
     },
     "android": {
+      "googleServicesFile": "./secrets/google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.pagar22.sendbirdseed"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "@react-native-firebase/app"
+    ]
   }
 }

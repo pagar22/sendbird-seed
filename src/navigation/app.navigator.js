@@ -4,7 +4,7 @@ import { useSendbirdChat } from "@sendbird/uikit-react-native";
 import { LoginScreen } from "../screens/accounts/login.screen";
 import { GroupChannelListScreen } from "../screens/channels/group-channel-list.screen";
 import { GroupChannelCreateScreen } from "../screens/channels/group-channel-create.screen";
-// import { GroupChannelScreen } from "../screens/channels/group-channel-detail.screen";
+import { GroupChannelScreen } from "../screens/channels/group-channel-detail.screen";
 
 const RootStack = createNativeStackNavigator();
 export const Navigation = () => {
@@ -25,10 +25,10 @@ export const Navigation = () => {
               name={"GroupChannelCreate"}
               component={GroupChannelCreateScreen}
             />
-            {/* <RootStack.Screen
+            <RootStack.Screen
               name={"GroupChannel"}
               component={GroupChannelScreen}
-            /> */}
+            />
           </>
         )}
       </RootStack.Navigator>
